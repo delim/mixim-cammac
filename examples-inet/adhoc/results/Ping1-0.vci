@@ -1,0 +1,50 @@
+file 79698 1432309030                                           
+version 2
+run Ping1-0-20150522-23:36:47-20584
+attr configname Ping1
+attr datetime 20150522-23:36:47
+attr experiment Ping1
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Adhoc
+attr processid 20584
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 12  Adhoc.host[1].pingApp[0]  pingTxSeq:vector  ETV
+attr interpolationmode  none
+attr title  "ping tx seq, vector"
+vector 14  Adhoc.host[1].networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 16  Adhoc.host[1].networkLayer.arp  initiatedResolution:vector  ETV
+attr title  "ARP initiated resolutions, vector"
+vector 13  Adhoc.host[1].pingApp[0]  pingRxSeq:vector  ETV
+attr interpolationmode  none
+attr title  "ping rx seq, vector"
+vector 9  Adhoc.host[1].pingApp[0]  rtt:vector  ETV
+attr interpolationmode  none
+attr title  "ping round-trip time, vector"
+attr unit  s
+vector 10  Adhoc.host[1].pingApp[0]  numLost:vector  ETV
+attr interpolationmode  none
+attr title  "pings lost, vector"
+vector 5  Adhoc.host[0].networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 7  Adhoc.host[0].networkLayer.arp  initiatedResolution:vector  ETV
+attr title  "ARP initiated resolutions, vector"
+vector 17  Adhoc.host[1].networkLayer.arp  failedResolution:vector  ETV
+attr title  "ARP failed resolutions, vector"
+5	1462 83 8039 66676 123.372620465555 692.372620465555 3 1 1 3 3
+7	1545 83 8039 66676 123.372620465555 692.372620465555 3 1 1 3 3
+9	1628 21617 161 93473 3.375358465555 999.374196465555 620 0.002618 2.00392 4.832676 5.0361918798
+10	23245 181 4714 90485 97.374556465555 978.375298465555 6 85 377 1145 277823
+12	23426 30577 7 93485 3.371378465555 1000.371378465555 998 0 997 497503 330839495
+13	54003 19122 161 93473 3.375358465555 999.374196465555 620 0 996 314286 195374298
+14	73125 3939 10 90328 3.371378465555 978.371378465555 136 1 1 136 136
+16	77064 1387 10 90300 3.371378465555 976.371378465555 48 1 1 48 48
+17	78451 1247 19151 90297 247.371378465555 976.371378465555 43 1 1 43 43

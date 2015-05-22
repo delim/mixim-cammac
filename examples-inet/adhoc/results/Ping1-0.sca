@@ -1,0 +1,158 @@
+version 2
+run Ping1-0-20150522-23:36:47-20584
+attr configname Ping1
+attr datetime 20150522-23:36:47
+attr experiment Ping1
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Adhoc
+attr processid 20584
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar Adhoc.host[0].networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar Adhoc.host[0].networkLayer.arp 	initiatedResolution:count 	3
+attr title  "ARP initiated resolutions, count"
+scalar Adhoc.host[0].networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar Adhoc.host[0].networkLayer.arp 	sentReq:count 	3
+attr title  "ARP request sent, count"
+scalar Adhoc.host[0].wlan[0].phy 	nbFramesWithInterference 	0
+scalar Adhoc.host[0].wlan[0].phy 	nbFramesWithoutInterference 	3733
+scalar Adhoc.host[0].wlan[0].phy 	nbFramesWithInterferencePartial 	0
+scalar Adhoc.host[0].wlan[0].phy 	nbFramesWithoutInterferencePartial 	0
+scalar Adhoc.host[0].wlan[0].phy 	nbFramesWithInterferenceDropped 	0
+scalar Adhoc.host[0].wlan[0].phy 	nbFramesWithoutInterferenceDropped 	495
+scalar Adhoc.host[0].pingApp[0] 	pingRxSeq:count 	0
+attr interpolationmode  none
+attr title  "ping rx seq, count"
+scalar Adhoc.host[0].pingApp[0] 	pingTxSeq:count 	0
+attr interpolationmode  none
+attr title  "ping tx seq, count"
+scalar Adhoc.host[0].pingApp[0] 	numOutOfOrderArrivals:last 	-1.#IND
+attr interpolationmode  none
+attr title  "ping out-of-order arrivals, last"
+scalar Adhoc.host[0].pingApp[0] 	numLost:last 	-1.#IND
+attr interpolationmode  none
+attr title  "pings lost, last"
+statistic Adhoc.host[0].pingApp[0] 	rtt:histogram
+field count 0
+field mean 0
+field stddev -1.#IND
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "ping round-trip time, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-018	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar Adhoc.host[1].networkLayer.arp 	failedResolution:count 	43
+attr title  "ARP failed resolutions, count"
+scalar Adhoc.host[1].networkLayer.arp 	initiatedResolution:count 	48
+attr title  "ARP initiated resolutions, count"
+scalar Adhoc.host[1].networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar Adhoc.host[1].networkLayer.arp 	sentReq:count 	136
+attr title  "ARP request sent, count"
+scalar Adhoc.host[1].wlan[0].phy 	nbFramesWithInterference 	0
+scalar Adhoc.host[1].wlan[0].phy 	nbFramesWithoutInterference 	3731
+scalar Adhoc.host[1].wlan[0].phy 	nbFramesWithInterferencePartial 	0
+scalar Adhoc.host[1].wlan[0].phy 	nbFramesWithoutInterferencePartial 	0
+scalar Adhoc.host[1].wlan[0].phy 	nbFramesWithInterferenceDropped 	0
+scalar Adhoc.host[1].wlan[0].phy 	nbFramesWithoutInterferenceDropped 	0
+scalar Adhoc.host[1].pingApp[0] 	"Pings sent" 	998
+scalar Adhoc.host[1].pingApp[0] 	"ping loss rate (%)" 	37.875751503006
+scalar Adhoc.host[1].pingApp[0] 	"ping out-of-order rate (%)" 	0
+scalar Adhoc.host[1].pingApp[0] 	pingRxSeq:count 	620
+attr interpolationmode  none
+attr title  "ping rx seq, count"
+scalar Adhoc.host[1].pingApp[0] 	pingTxSeq:count 	998
+attr interpolationmode  none
+attr title  "ping tx seq, count"
+scalar Adhoc.host[1].pingApp[0] 	numOutOfOrderArrivals:last 	-1.#IND
+attr interpolationmode  none
+attr title  "ping out-of-order arrivals, last"
+scalar Adhoc.host[1].pingApp[0] 	numLost:last 	377
+attr interpolationmode  none
+attr title  "pings lost, last"
+statistic Adhoc.host[1].pingApp[0] 	rtt:histogram
+field count 620
+field mean 0.0077946387096774
+field stddev 0.089861883937409
+field sum 4.832676
+field sqrsum 5.0361918798
+field min 0.002618
+field max 2.00392
+attr interpolationmode  none
+attr title  "ping round-trip time, histogram"
+attr unit  s
+bin	-INF	0
+bin	0.001787	0
+bin	0.0018978	0
+bin	0.0020086	0
+bin	0.0021194	0
+bin	0.0022302	0
+bin	0.002341	0
+bin	0.0024518	0
+bin	0.0025626	66
+bin	0.0026734	111
+bin	0.0027842	101
+bin	0.002895	116
+bin	0.0030058	80
+bin	0.0031166	113
+bin	0.0032274	23
+bin	0.0033382	0
+bin	0.003449	1
+bin	0.0035598	0
+bin	0.0036706	0
+bin	0.0037814	0
+bin	0.0038922	1
+bin	0.004003	2
+bin	0.0041138	1
+bin	0.0042246	1
+bin	0.0043354	0
+bin	0.0044462	0
+bin	0.004557	1
+bin	0.0046678	0
+bin	0.0047786	0
+bin	0.0048894	0
+bin	0.0050002	0
+bin	0.005111	3
