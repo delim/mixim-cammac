@@ -853,8 +853,8 @@ void Mac80211MultiChannel::handleINVframe(Mac80211MultiChannelPkt * af)
     debugEV << "Mac80211MultiChannel::handleOBJframe learned that service channel " << af->getSelectedSch() + 1
             << " is occupied by " << af->getSchSender() << " and " << af->getSchReceiver() << "." << endl;
     // update SCHchannelInfo
-    SCHchannelInfo[af->getSelectedSch()].occupied = true;
     if (overideSCHNAV(af->getSelectedSch(), af->getSchDuration())) {
+        SCHchannelInfo[af->getSelectedSch()].occupied = true;
         SCHchannelInfo[af->getSelectedSch()].sender = af->getSchSender();
         SCHchannelInfo[af->getSelectedSch()].receiver = af->getSchReceiver();
     }
@@ -1433,9 +1433,13 @@ void Mac80211MultiChannel::beginNewCycle()
             if (!availableSCH()) {
                 // schedule NAV and remain QUIET until a service channel is free
                 // NAV will prompt a new beginNewCycle();
-                // (no point accepting a handshake either)
-                scheduleAt(getEarliestArrivalSCHNAV(), nav);
-                setState(QUIET);
+                // (no point accepting a handshake but can still send out INV)
+
+                //scheduleAt(getEarliestArrivalSCHNAV(), nav);
+                //setState(QUIET);
+                cancelEvent(reattempt);
+                scheduleAt(getEarliestArrivalSCHNAV(), reattempt);
+                setState(IDLE);
                 return;
             }
 
@@ -1453,11 +1457,13 @@ void Mac80211MultiChannel::beginNewCycle()
             /* End of checks */
 
             // select a service channel
-            if (longRetryCounter == 0)
+            if (longRetryCounter == 0) {
                 selectAvailableSCH();
+            }
             // else if node was cockblocked then cycle to the next available one
-            else
+            else {
                 cycleNextAvailableSCH(selectedSCH);
+            }
 
             ChannelState channel = phy->getChannelState();
             debugEV << simTime() << " do contention: medium = " << channel.info() << ", backoff = "

@@ -11,7 +11,7 @@
 #include "Consts80211.h"
 #include "Mac80211MultiChannelPkt_m.h"
 
-#define NO_OF_CHANNELS      13
+#define NO_OF_CHANNELS      3
 #define LENGTH_PRA          160
 #define LENGTH_PRB          LENGTH_PRA
 #define LENGTH_INV          168
@@ -162,15 +162,19 @@ protected:
     simtime_t getEarliestArrivalSCHNAV(void)
     {
         simtime_t earliest = sch_nav[0]->getArrivalTime();
+        int earliest_ch = 0;
 
         for (int i=1; i<NO_OF_CHANNELS; i++) {
-            if (sch_nav[i]->getArrivalTime() < earliest)
+            if (sch_nav[i]->getArrivalTime() < earliest) {
                 earliest = sch_nav[i]->getArrivalTime();
+                earliest_ch = i;
+            }
         }
-        // earlist can either be '0', a time in the future, or a time in the past
+        // earliest can either be '0', a time in the future, or a time in the past
         if (earliest == 0 || earliest < simTime())
             earliest = simTime();
 
+        debugEV << "earliest available service channel is Service Channel " << earliest_ch + 1 << " at " << earliest << "\n";
         return earliest;
     }
 
@@ -179,6 +183,7 @@ protected:
         for (int i=0; i<NO_OF_CHANNELS; i++) {
             if (!SCHchannelInfo[i].occupied) return true;
         }
+        debugEV << "no service channels available\n";
         return false;
     }
 
