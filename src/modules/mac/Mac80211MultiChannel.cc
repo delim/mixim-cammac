@@ -591,6 +591,10 @@ void Mac80211MultiChannel::handleMsgNotForMe(cMessage *af, simtime_t_cref durati
             cancelEvent(timeout);
             dataTransmissionFailed();
         }
+        else if(state == WFDATA) {
+            assert(timeout->isScheduled());
+            cancelEvent(timeout);
+        }
 
         currentIFS = EIFS;
     }
@@ -1018,6 +1022,7 @@ void Mac80211MultiChannel::handleEndSifsTimer()
     }
 
     Mac80211MultiChannelPkt *frame = static_cast<Mac80211MultiChannelPkt *>(endSifs->getContextPointer());
+    debugEV << simTime() << " endSifs context " << frame->getName() << "\n";
     phy->setRadioState(MiximRadio::TX);
     switch (frame->getKind())
     {
